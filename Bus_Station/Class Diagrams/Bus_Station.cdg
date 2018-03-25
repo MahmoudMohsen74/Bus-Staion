@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Bus_Station">
+  <ClassDiagramComponents>
+    <Class name="Trips" package="" visibility="public" xPosition="495.0" yPosition="-3.0">
+      <Fields>
+        <Field name="type" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Available" returnType="void" visibility="public"/>
+        <Method name="Unavailable" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Employees" package="" visibility="public" xPosition="920.0" yPosition="-3.0">
+      <Fields>
+        <Field name="role" type="Object" visibility="private"/>
+        <Field name="name" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="register" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehicles" package="" visibility="public" isAbstract="true" xPosition="1250.0" yPosition="16.0">
+      <Fields>
+        <Field name="arrivalTime" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="tripType" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="childs" package="" visibility="public" xPosition="22.0" yPosition="202.0">
+      <Fields>
+        <Field name="age" type="Object" visibility="private"/>
+        <Field name="name" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="pay" returnType="void" visibility="public"/>
+        <Method name="book" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Adults" package="" visibility="public" xPosition="196.0" yPosition="202.0">
+      <Fields>
+        <Field name="age" type="Object" visibility="private"/>
+        <Field name="name" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="pay" returnType="void" visibility="public"/>
+        <Method name="book" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Passengers" package="" visibility="public" isAbstract="true" xPosition="22.0" yPosition="7.0">
+      <Fields>
+        <Field name="age" type="Object" visibility="private"/>
+        <Field name="name" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="book" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+        <Method name="pay" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bus" package="" visibility="public" xPosition="1268.0" yPosition="240.0">
+      <Fields>
+        <Field name="untitledField" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MiniBus" package="" visibility="public" xPosition="1092.0" yPosition="231.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Limosine" package="" visibility="public" xPosition="1456.0" yPosition="221.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Driver" package="" visibility="public" xPosition="734.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="view" returnType="void" visibility="public"/>
+        <Method name="register" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Manager" package="" visibility="public" xPosition="892.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="view" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Internal" package="" visibility="public" xPosition="391.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Available" returnType="void" visibility="public"/>
+        <Method name="Unavailable" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="External" package="" visibility="public" xPosition="564.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Available" returnType="void" visibility="public"/>
+        <Method name="Unavailable" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tickets" package="" visibility="public" xPosition="469.0" yPosition="358.0">
+      <Fields>
+        <Field name="price" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="childs" target="Passengers"/>
+    <IsRelation name="is" source="Internal" target="Trips"/>
+    <IsRelation name="is" source="Limosine" target="Vehicles"/>
+    <IsRelation name="is" source="Manager" target="Employees"/>
+    <IsRelation name="is" source="Bus" target="Vehicles"/>
+    <IsRelation name="is" source="External" target="Trips"/>
+    <IsRelation name="is" source="Adults" target="Passengers"/>
+    <IsRelation name="is" source="Driver" target="Employees"/>
+    <HasRelation name="avilability_V" source="Employees" target="Vehicles" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="MiniBus" target="Vehicles"/>
+    <HasRelation name="availability_T" source="Employees" target="Trips" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="has" source="Passengers" target="Trips" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
